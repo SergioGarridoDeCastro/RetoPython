@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:17
+    container_name: postgreSQL_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: vehiculos_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
