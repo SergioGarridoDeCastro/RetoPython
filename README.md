@@ -57,22 +57,27 @@ cursor.execute("""
                 """, (matricula, fecha))
 ```
 Una vez se ha poblado la tabla se realiza un commit() para confirmar los cambios y guardarlos de forma permanente. Por ultimo se cierran el cursor y la conexión
-[!NOTE]
-Para levantar el contenedor
-```sh
-docker-compose up -d
-```
-Para conectarse al contenedor
-```sh
-docker-compose up -d
-```
-Una vez conectado, para crear la tabla que almacenara los valores de los vehículos:
-```sql
-CREATE TABLE vehiculos (
-    matricula VARCHAR(255) PRIMARY KEY,
-    fecha TIMESTAMP
-);
-```
+
+
+> **Nota:**
+> 
+> Para levantar el contenedor:
+> ```sh
+> docker-compose up -d
+> ```
+> 
+> Para conectarse al contenedor:
+> ```sh
+> docker exec -it postgreSQL_db psql -U admin -d vehiculos_db
+> ```
+> 
+> Una vez conectado, para crear la tabla que almacenará los valores de los vehículos:
+> ```sql
+> CREATE TABLE vehiculos (
+>     matricula VARCHAR(255) PRIMARY KEY,
+>     fecha TIMESTAMP
+> );
+> ```
 
 ## Ejercicio 8
 Siguiendo el codigo del ejercicio 6 y del ejercicio 7 se crea una API REST con Flask, donde las peticiones GET siguen el formato http://localhost/XXX. En este caso se cargan los datos ejecutando una consulta SQL donde se seleccionan todos los datos de la tabla vehiculos y se almacenan en un diccionario. Posteriormente se consulta si una matricula esta en el diccionario con los datos de la base de datos. Si la matricula existe se devuelve un JSON con la matricula y la fecha. En caso contrario se devuelve un error 404.
