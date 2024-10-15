@@ -7,7 +7,7 @@ Continuando la primera solucion del ejercicio anterior se lee el fichero CSV a p
 Se lee el fichero JSON, de los cuales se leen la matricula y la distancia de cada linea del fichero. Se calcula la suma total de distancias por cada matricula y los resultados se almacenan en un diccionario donde las claves son la matriculas y el valor son las distancias totales
 ## Ejercicio 4
 De manera similar al anterior caso se leen del fichero JSON la matricula y las coordenadas (latitud y longitud). Para calcular la distancia entre dos puntos se ha utilizado la Fórmula de Harvesine Fórmula del semiverseno. Esta fórmula se utiliza para calcular la distancia entre dos puntos conocidos, con su latitud y longitud, en la superficie de una esfera
-![Formula de Harvesine](Harvesine.png)
+![Formula de Harvesine](./Harvesine.png)
 A traves de la implementacion de esta formula, se calcula la distancia en Km a partir de un punto y el punto inmediantamente anterior, definidos por sus latitudes y longitudes. Primero se convierten las latitudes y longitudes en radianes, despues se calculan las diferencias entre longitudes y latitudes. El simbolo Phi representa la latitud en radianes, mientras que el simbolo Lambda representa la longitud en radianes. 
 Se observan discrepancias entre los distintos valores, asumo que se debe a que los valores de la columna Distance estan representados en una magnitud distinta que los valores calculados con la Fórmula de Harvesine
 ## Ejercicio 5
